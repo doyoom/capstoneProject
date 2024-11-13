@@ -5,9 +5,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { HomeStackParams } from '../../../pages/Home';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
-
-
 import PortfolioPage from './PortfolioPage';
 import Review from './Review';
 
@@ -20,13 +17,13 @@ export const ProfileSection = ({ navigation }: { navigation: any }) => {
     Linking.openURL(url).catch((err) => console.error("Couldn't load page", err));
   };
 
-
   return (
     <View style={{ alignItems: 'center' }}>
       <ImageBackground
         style={{ width: '100%', height: 200 }}
         imageStyle={{ height: 160 }}
-        source={{ uri: 'https://image.made-in-china.com/2f0j00efRbSJMtHgqG/Denim-Bag-Youth-Fashion-Casual-Small-Mini-Square-Ladies-Shoulder-Bag-Women-Wash-Bags.webp' }}>
+        source={{ uri: 'https://image.made-in-china.com/2f0j00efRbSJMtHgqG/Denim-Bag-Youth-Fashion-Casual-Small-Mini-Square-Ladies-Shoulder-Bag-Women-Wash-Bags.webp' }}
+      >
         <View style={{ width: '100%', height: 160, backgroundColor: '#00000066', opacity: 0.7 }} />
         <Image
           style={{ alignSelf: 'center', width: 90, height: 90, borderRadius: 180, position: 'absolute', top: 110 }}
@@ -36,17 +33,12 @@ export const ProfileSection = ({ navigation }: { navigation: any }) => {
 
       <Text style={{ marginTop: 8, fontWeight: 'bold', fontSize: 20 }}>{UserName}</Text>
       <View style={{ flexDirection: 'row', padding: 20, paddingTop: 10, paddingBottom: 0 }}>
-
-        {/* 인스타그램 아이콘 */}
         <TouchableOpacity onPress={() => handlePressLink(instagramURL)} style={{ marginHorizontal: 10 }}>
           <Icon name="instagram" size={30} color="#E4405F" />
         </TouchableOpacity>
-
-        {/* 블로그 아이콘 */}
         <TouchableOpacity onPress={() => handlePressLink(blogURL)} style={{ marginHorizontal: 10 }}>
           <Icon name="web" size={30} color="#00BFFF" />
         </TouchableOpacity>
-
       </View>
     </View>
   );
